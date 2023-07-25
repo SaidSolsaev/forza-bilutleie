@@ -8,12 +8,15 @@ import mercgt from "../Images/mercgt.jpg"
 import mclaren from "../Images/mclaren.jpg"
 import r8 from "../Images/r8.jpg"
 import urus from "../Images/urus.jpg"
+import Header from "../Components/Header"
 
 
 export default function Home() {
     return (
         <Styles>
-            <Container>
+            <Header />
+            <Container style={{marginTop: "100px"}}>
+                <h1>Våre Biler</h1>
                 <div className="card-container">
                     <div className="cards">
                         <Grid container spacing={2}>
@@ -42,13 +45,11 @@ export default function Home() {
 }
 
 const Styles = styled.div`
-    margin-top: 50px;
+    background-color: #d3d3d3;
+
       
     .card-container{
         display: flex;
-        
-        .cards{
-        }
 
     }
 `;
