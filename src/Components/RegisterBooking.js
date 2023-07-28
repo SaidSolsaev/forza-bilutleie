@@ -1,9 +1,14 @@
 import React from 'react'
+import styled from 'styled-components'
 
 export default function RegisterBooking() {
     return (
-        <div>
+        <Container>
             RegisterBooking
-        </div>
+        </Container>
     )
 }
+
+const Container = styled.div`
+    
+`;

@@ -9,6 +9,7 @@ import mclaren from "../Images/mclaren.jpg"
 import r8 from "../Images/r8.jpg"
 import urus from "../Images/urus.jpg"
 import Header from "../Components/Header"
+import RegisterBooking from "../Components/RegisterBooking"
 
 
 export default function Home() {
@@ -16,9 +17,9 @@ export default function Home() {
         <Styles>
             <Header />
             <Container style={{marginTop: "100px"}}>
-                <h1>Våre Biler</h1>
                 <div className="card-container">
                     <div className="cards">
+                        <h1>Våre Biler</h1>
                         <Grid container spacing={2}>
                             <Grid item>
                                 <CarCard car="BMW M5" img={bmw} pris="5990" model={2019}/>
@@ -36,8 +37,11 @@ export default function Home() {
                                 <CarCard car="AUDI R8" img={r8} pris="5990" model={2019}/>
                             </Grid>
                         </Grid>
-                        
                     </div>
+                </div>
+
+                <div className="register-booking">
+                    <RegisterBooking />
                 </div>
             </Container>
         </Styles>
@@ -47,9 +51,13 @@ export default function Home() {
 const Styles = styled.div`
     background-color: #d3d3d3;
 
-      
+    
     .card-container{
         display: flex;
 
+    }
+
+    .register-booking{
+        margin-top: 100px;
     }
 `;
