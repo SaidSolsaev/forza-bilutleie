@@ -15,7 +15,7 @@ export default function Header() {
 
     return (
         <Container>
-            <Carousel fade activeIndex={index} onSelect={handleSelect}>
+            <Carousel fade activeIndex={index} onSelect={handleSelect} prevIcon nextIcon>
                 <CarouselItem interval={1000}>
                     <img src={b1} alt='bmw'/>
                     <Carousel.Caption>
@@ -84,7 +84,7 @@ const Container = styled.div`
                     color: black;
                 }
             }
-    }
+        }
     }
 
 `;

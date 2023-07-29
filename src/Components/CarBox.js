@@ -99,7 +99,7 @@ const Container = styled.div`
         
         .price{
             width: 100%;
-            background-color: red;
+            background-color: #FC2E20;
             font-size: 1.5rem;
             display: flex;
             align-items: center;
