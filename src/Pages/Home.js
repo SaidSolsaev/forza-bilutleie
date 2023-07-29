@@ -10,6 +10,9 @@ import r8 from "../Images/r8.jpg"
 import urus from "../Images/urus.jpg"
 import Header from "../Components/Header"
 import RegisterBooking from "../Components/RegisterBooking"
+import BookCar from "../Components/BookCar"
+import PickCar from "../Components/PickCar"
+import PlanTrip from "../Components/PlanTrip"
 
 
 export default function Home() {
@@ -17,7 +20,10 @@ export default function Home() {
         <Styles>
             <Header />
             <Container style={{marginTop: "100px"}}>
-                <div className="card-container">
+                <BookCar />
+                <PlanTrip />
+                <PickCar />
+                {/* <div className="card-container">
                     <div className="cards">
                         <h1>Våre Biler</h1>
                         <Grid container spacing={2}>
@@ -38,7 +44,7 @@ export default function Home() {
                             </Grid>
                         </Grid>
                     </div>
-                </div>
+                </div> */}
 
                 <div className="register-booking">
                     <RegisterBooking />
