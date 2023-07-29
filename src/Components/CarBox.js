@@ -2,7 +2,6 @@ import { useState } from "react";
 import styled from "styled-components";
 
 
-
 function CarBox({ data, carID }) {
     const [carLoad, setCarLoad] = useState(true);
     

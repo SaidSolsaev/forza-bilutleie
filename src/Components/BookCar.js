@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+
 
 export default function BookCar() {
     const [modal, setModal] = useState(false);
@@ -22,22 +25,45 @@ export default function BookCar() {
 
     const openModal = (e) => {
         e.preventDefault();
-        const errorMsg = document.querySelector(".error-message");
-        if (
-            pickUp === "" ||
-            dropOff === "" ||
-            pickTime === "" ||
-            dropTime === "" ||
-            carType === ""
-        ) {
-            errorMsg.style.display = "flex";
-        } else {
-            setModal(!modal);
-            const modalDiv = document.querySelector(".booking-modal");
-            modalDiv.scroll(0, 0);
-            errorMsg.style.display = "none";
-        }
+        // const errorMsg = document.querySelector(".error-message");
+        // if (
+        //     pickUp === "" ||
+        //     dropOff === "" ||
+        //     pickTime === "" ||
+        //     dropTime === "" ||
+        //     carType === ""
+        // ) {
+        //   errorMsg.style.display = "flex";
+        // } else {
+        setModal(!modal);
+        const modalDiv = document.querySelector(".booking-modal");
+        modalDiv.scroll(0, 0);
+        // errorMsg.style.display = "none";
+        
     };
+
+    const confirmBooking = (e) => {
+        e.preventDefault();
+        toast.info(`Resservasjon er sendt`, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+        });
+        // setModal(!modal);
+    };
+
+    useEffect(() => {
+        if (modal === true) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "auto";
+        }
+      }, [modal]);
 
     const handleName = (e) => {
         setName(e.target.value);
@@ -131,11 +157,106 @@ export default function BookCar() {
                                     Søk
                                 </button>
                             </form>
-                        
                         </div>
                     </div>
                 </div>
             </section>
+
+            <div className={`booking-modal ${modal ? "active-modal" : ""}`}>
+                <div className='personal-info'>
+                    <h4>Personlig Informasjon</h4>
+                    <form className='info-form'>
+                        <div className='info-form__2col'>
+                            <span>
+                                <label>Fornavn</label>
+                                <input 
+                                    value={name}
+                                    onChange={handleName}
+                                    type='text'
+                                    placeholder='Hassan'
+                                />
+                            </span>
+
+                            <span>
+                                <label>Etternavn</label>
+                                <input 
+                                    value={lastName}
+                                    onChange={handleLastName}
+                                    type='text'
+                                    placeholder='Ali'
+                                />
+                            </span>
+
+                            <span>
+                                <label>Alder</label>
+                                <input 
+                                    value={age}
+                                    onChange={handleAge}
+                                    type='number'
+                                    placeholder='18'
+                                />
+                            </span>
+
+                            <span>
+                                <label>Tlf</label>
+                                <input 
+                                    value={phone}
+                                    onChange={handlePhone}
+                                    type='tel'
+                                    placeholder='12345678'
+                                />
+                            </span>
+                        </div>
+
+                        <div className='info-form__1col'>
+                            <span>
+                                <label>Adresse</label>
+                                <input 
+                                    value={address}
+                                    onChange={handleAddress}
+                                    type='text'
+                                    placeholder='Havreveien 77'
+                                />
+                            </span>
+
+                            <span>
+                                <label>By</label>
+                                <input 
+                                    value={city}
+                                    onChange={handleCity}
+                                    type='text'
+                                    placeholder='Oslo'
+                                />
+                            </span>
+
+                            <span>
+                                <label>Postnummer</label>
+                                <input 
+                                    value={zipcode}
+                                    onChange={handleZip}
+                                    type='text'
+                                    placeholder='0800'
+                                />
+                            </span>
+
+                            <span>
+                                <label>Email</label>
+                                <input 
+                                    value={email}
+                                    onChange={handleEmail}
+                                    type='email'
+                                    placeholder='Epost@Mail.no'
+                                />
+                            </span>
+                        </div>
+
+                        <div className="reserve-button">
+                            <button onClick={confirmBooking}>Reserve Now</button>
+                        </div>
+                        <ToastContainer position='top-right'/>
+                    </form>
+                </div>
+            </div>
         </Container>
     )
 }
@@ -230,7 +351,81 @@ const Container = styled.div`
                 &:hover {
                     box-shadow: 0 10px 15px rgb(255 83 48 / 55%);
                 }
-                  
+            }
+        }
+    }
+
+    .booking-modal{
+        opacity: 0;
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        z-index: 999999999999;
+        top: 54%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60rem;
+        height: 100vh;
+        border: 2px solid white;
+        background-color: rgba(255, 255, 255);
+        padding-right: 2px;
+    }
+
+    .active-modal {
+        opacity: 1 !important;
+        display: flex !important;
+    }
+
+    .personal-info{
+        padding: 3rem 3rem;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        
+
+        .info-form{
+            display: flex;
+            flex-direction: column;
+            
+            h4{
+                font-size: 1.8rem;
+                text-transform: uppercase;
+                margin-bottom: 2rem;
+            }
+    
+            .info-form__1col{
+                grid-template-columns: 1fr !important;
+            }
+    
+            .info-form__2col, .info-form__1col{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                padding: 1rem 0;
+                
+    
+                span{
+                    display: flex;
+                    flex-direction: column;
+                    gap: .4rem;
+                }
+    
+                label{
+                    font-weight: 500;
+                    color: #777777;
+                }
+    
+                input {
+                    padding: 10px;
+                    background-color: #dbdbdb;
+                    color: #555;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    outline: none;
+                    border: none;
+                }
             }
         }
     }

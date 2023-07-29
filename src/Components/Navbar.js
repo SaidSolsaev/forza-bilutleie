@@ -17,7 +17,6 @@ export default function Navbar() {
                             <li><a href='/'>Våre biler</a></li>
                             <li><a href='/'>Kontakt</a></li>
                             <li><a href='/'>Om Oss</a></li>
-
                         </ul>
                     </div>
 
@@ -67,6 +66,7 @@ const Container = styled.div`
                         a{
                             text-decoration: none;
                             color: white;
+                            transition: all .3s;
                             &:hover{
                                 color: #FC2E20;
                             }
@@ -82,6 +82,8 @@ const Container = styled.div`
                     border: none;
                     color: white;
                     cursor: pointer;
+                    transition: all 0.3s;
+
                     &:hover{
                         color: #FC2E20;
                     }

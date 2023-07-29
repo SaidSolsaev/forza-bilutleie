@@ -4,7 +4,7 @@ import { Carousel } from 'react-bootstrap';
 import { CarouselItem } from 'react-bootstrap/esm';
 import b1 from "../Images/back1.jpg"
 import b2 from "../Images/back2.jpg"
-import urus from "../Images/urus.jpg"
+
 
 export default function Header() {
     const [index, setIndex] = useState(0);
