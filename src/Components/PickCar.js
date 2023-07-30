@@ -17,7 +17,7 @@ export default function PickCar() {
 
     return (
         <Container>
-            <section className='pick-section'>
+            <section className='pick-section' id='cars'>
                 <div className='container'>
                     <div className='pick-container'>
                         <div className='title'>

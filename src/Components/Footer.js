@@ -2,6 +2,10 @@ import React from 'react'
 import styled from 'styled-components';
 import EmailIcon from '@mui/icons-material/Email';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import CopyrightIcon from '@mui/icons-material/Copyright';
+
 
 export default function Footer() {
     
@@ -31,6 +35,18 @@ export default function Footer() {
                   <span><EmailIcon /></span>&nbsp; forzapremium@mail.com
                 </a>
               </li>
+
+              <li>
+                <a href="https://www.instagram.com/forza__premium/">
+                  <span><InstagramIcon /></span>&nbsp; forza__premium
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.instagram.com/forza__premium/">
+                  <span><FacebookIcon /></span>&nbsp; ForzaPremium
+                </a>
+              </li>
             </ul>
 
             <ul className="footer-content__2">
@@ -56,6 +72,11 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+          
+          <div className='made-by'>
+            <span><CopyrightIcon /></span>&nbsp;This website is made by&nbsp;
+            <a href='https://www.linkedin.com/in/said-solsaev/'>Said Solsaev</a>
+          </div>
         </div>
       </footer>
     </Container>
@@ -63,6 +84,18 @@ export default function Footer() {
 }
 
 const Container = styled.div`
+
+  .made-by{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    a{
+      color: red;
+      text-decoration: none;
+    }
+  }
 
   footer {
     background: #191919;
@@ -121,7 +154,9 @@ const Container = styled.div`
         }
   
         &:nth-child(3),
-        &:nth-child(4) {
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6) {
           font-size: 18px;
           font-weight: 600;
           margin-bottom: 1rem;

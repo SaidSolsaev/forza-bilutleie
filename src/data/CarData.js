@@ -1,11 +1,8 @@
-
 import bmw from "../Images/bmw.jpg"
 import mercgt from "../Images/mercgt.jpg"
 import mclaren from "../Images/mclaren.jpg"
 import r8 from "../Images/r8.jpg"
 import urus from "../Images/urus.jpg"
-
-
 
 
 export const CAR_DATA = [

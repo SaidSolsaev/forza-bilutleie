@@ -21,7 +21,7 @@ export default function Header() {
                     <Carousel.Caption>
                         <div className='btn-container'>
                             <a href='#book'><button className='book-btn'>Book</button></a>
-                            <button className='cars-btn'>Våre Biler</button>
+                            <a href='#cars'><button className='cars-btn'>Våre Biler</button></a>
                         </div>
                     </Carousel.Caption>
                 </CarouselItem>
@@ -31,7 +31,7 @@ export default function Header() {
                     <Carousel.Caption>
                         <div className='btn-container'>
                             <a href='#book'><button className='book-btn'>Book</button></a>
-                            <button className='cars-btn'>Våre Biler</button>
+                            <a href='#cars'><button className='cars-btn'>Våre Biler</button></a>
                         </div>
                     </Carousel.Caption>
                 </CarouselItem>
