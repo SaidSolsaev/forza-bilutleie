@@ -1,18 +1,12 @@
 import {Container} from "react-bootstrap"
 import React from 'react'
-import CarCard from "../Components/CarCard"
-import { Grid } from "@mui/material"
 import styled from "styled-components"
-import bmw from "../Images/bmw.jpg"
-import mercgt from "../Images/mercgt.jpg"
-import mclaren from "../Images/mclaren.jpg"
-import r8 from "../Images/r8.jpg"
-import urus from "../Images/urus.jpg"
 import Header from "../Components/Header"
-import RegisterBooking from "../Components/RegisterBooking"
 import BookCar from "../Components/BookCar"
 import PickCar from "../Components/PickCar"
 import PlanTrip from "../Components/PlanTrip"
+import Banner from "../Components/Banner"
+import Testimonials from "../Components/Testimonials"
 
 
 export default function Home() {
@@ -46,10 +40,10 @@ export default function Home() {
                     </div>
                 </div> */}
 
-                <div className="register-booking">
-                    <RegisterBooking />
-                </div>
+                
             </Container>
+            <Banner />
+            <Testimonials />
         </Styles>
     );
 }

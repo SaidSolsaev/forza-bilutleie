@@ -6,17 +6,22 @@ import bmw from "../Images/bmw.jpg"
 import mercgt from "../Images/mercgt.jpg"
 import mclaren from "../Images/mclaren.jpg"
 import r8 from "../Images/r8.jpg"
-import urus from "../Images/urus.jpg"
+import urus from "../Images/urus.jpg";
+
 
 export default function BookCar() {
+    const todaysDate = new Date().toISOString().slice(0, 10);
+    
+
     const [modal, setModal] = useState(false);
     
     const [carType, setCarType] = useState("");
     const [pickUp, setPickUp] = useState("");
     const [dropOff, setDropOff] = useState("");
-    const [pickTime, setPickTime] = useState("");
-    const [dropTime, setDropTime] = useState("");
+    const [pickTime, setPickTime] = useState(todaysDate);
+    const [dropTime, setDropTime] = useState(todaysDate);
     const [carImg, setCarImg] = useState("");
+    
 
     const [name, setName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -234,12 +239,12 @@ export default function BookCar() {
 
                                 <div className='box-form_car-time'>
                                     <label htmlFor='picktime'>Fra Dato</label>
-                                    <input id='picktime' value={pickTime} onChange={handlePickTime} type='date'></input>
+                                    <input id='picktime' min={pickTime} value={pickTime} onChange={handlePickTime} type='date' />
                                 </div>
 
                                 <div className='box-form_car-time'>
                                     <label htmlFor='droptime'>Til Dato</label>
-                                    <input id='picktime' value={dropTime} onChange={handleDropTime} type='date'></input>
+                                    <input id='picktime' min={pickTime} onChange={handleDropTime} type='date' />
                                 </div>
                                 
                                 <button onClick={openModal} type='submit'>Søk</button>
