@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
 import TestemonialBox from './TestemonialBox';
+import CircleIcon from '@mui/icons-material/Circle';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 export default function Testimonials() {
+    const [active, setActive] = useState(0);
+
+    console.log(active);
+
     return (
         <Styles>
             <section className='testimonial-section'>
@@ -20,8 +27,17 @@ export default function Testimonials() {
                         </div>
                         
                         <div className='all-testimonials'>
-                            <TestemonialBox name="Said"/>
-                            <TestemonialBox name="Said"/>
+                            <Carousel autoPlay interval={2000}>
+                                <div className='carousel-box'>
+                                    <TestemonialBox name="Said Solsaev"/>
+                                    <TestemonialBox name="Said Solsaev"/>
+                                </div>
+
+                                <div className='carousel-box'>
+                                    <TestemonialBox name="Said Solsaev"/>
+                                    <TestemonialBox name="Said Solsaev"/>
+                                </div>
+                            </Carousel>
                         </div>
                     </div>
                 </div>
@@ -49,7 +65,6 @@ const Styles = styled.div`
         
             h4 {
                 font-size: 28px;
-                font-family: $text-font;
                 font-weight: 500;
             }
         
@@ -60,11 +75,47 @@ const Styles = styled.div`
             }
         
             p {
-                font-size: 16px;
-                font-family: $text-font;
-                color: $text-gray;
+                font-size: 16px; 
                 line-height: 1.4;
             }
         }
+
+        .all-testimonials{
+            display: flex;
+            gap: 3rem;
+        }
+
+        .testimonial-content__dots{
+            margin-top: 3rem;
+            
+            &__icons{
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                
+                button{
+                    border: none;
+                    background: none;
+                }
+
+                .active-dot{
+                    color: red;
+                }
+            }
+        }
     }
+
+    .carousel carousel-slider{
+        margin: 20px;
+        .control-dots{
+            margin-top: 20px;
+        }
+    }
+
+    .carousel-box{
+        display: flex;
+        gap: 3rem;
+    }
+
+    
 `;

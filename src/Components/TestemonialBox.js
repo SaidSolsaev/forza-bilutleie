@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import profile from "../Images/profile.png"
+import StarIcon from '@mui/icons-material/Star';
 
 export default function TestemonialBox({name, img, text}) {
     return (
@@ -9,22 +11,28 @@ export default function TestemonialBox({name, img, text}) {
                     {text}
                     "We rented a car from this website and had an amazing
                     experience! The booking was easy and the rental rates were
-                    very affordable. "
+                    very affordable."
                 </p>
 
                 <div className='all-testimonials__box__name'>
                     <div className='all-testimonials__box__name__profile'>
-                        <img alt='user_pic'/>
+                        <img src={profile} alt='user_pic'/>
                         <span>
                             <h4>{name}</h4>
                             <p>Kunde</p>
                         </span>
                     </div>
+                    <div className='all-testimonials__box__name__stars'>
+                        <StarIcon />
+                        <StarIcon />
+                        <StarIcon />
+                        <StarIcon />
+                        <StarIcon />
+                    </div>
                 </div>
             </div>
-            
         </Styles>
-    )
+    );
 }
 
 const Styles = styled.div`
@@ -33,16 +41,16 @@ const Styles = styled.div`
     &__box {
         background-color: white;
         box-shadow: 0 20px 40px 0 rgb(0 0 0 / 8%);
-        width: 54rem;
-        // padding: 5.5rem;
+        padding: 2rem;
         position: relative;
+        // width: 500px;
     
         @media (max-width: 1000px) {
             padding: 5rem 3rem;
         }
     
         p {
-            font-size: 16px;
+            font-size: 22px;
             font-weight: 500;
         }
     
@@ -51,13 +59,14 @@ const Styles = styled.div`
     
             &__profile {
                 display: flex;
-                gap: 2rem;
+                gap: 1rem;
+                width: 60%;
                 align-items: center;
-                margin-top: 3rem;
+                margin-top: 1rem;
     
                 img {
-                    width: 7rem;
-                    height: 7rem;
+                    width: 120px;
+                    height: 120px;
                     border-radius: 50%;
                 }
     
@@ -66,10 +75,17 @@ const Styles = styled.div`
                 }
     
                 p {
-                  font-size: $p-size;
-                    font-family: $text-font;
+                    font-size: 16px;
+                    // margin: 0;
                     font-weight: 400;
                 }
+            }
+
+            &__stars{
+                width:40%;
+                display: flex;
+                align-items: end;
+                justify-content: end;
             }
         }
       

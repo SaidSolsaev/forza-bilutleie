@@ -15,7 +15,9 @@ export default function Banner() {
 }
 
 const StylesCont = styled.div`
-    height: 20vh;
+    height: 25vh;
     background: #191919;
     color: white;
+    margin-top: 15rem;
+    padding: 40px;
 `;
