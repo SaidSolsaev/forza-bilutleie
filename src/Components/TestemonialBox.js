@@ -76,13 +76,13 @@ const Styles = styled.div`
     
                 p {
                     font-size: 16px;
-                    // margin: 0;
                     font-weight: 400;
+                    text-align: left;
                 }
             }
 
             &__stars{
-                width:40%;
+                width: 40%;
                 display: flex;
                 align-items: end;
                 justify-content: end;

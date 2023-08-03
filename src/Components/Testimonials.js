@@ -27,15 +27,15 @@ export default function Testimonials() {
                         </div>
                         
                         <div className='all-testimonials'>
-                            <Carousel autoPlay interval={2000}>
+                            <Carousel showThumbs={false}>
                                 <div className='carousel-box'>
-                                    <TestemonialBox name="Said Solsaev"/>
-                                    <TestemonialBox name="Said Solsaev"/>
+                                    <TestemonialBox name="Lars Olsen"/>
+                                    <TestemonialBox name="Lars Olsen"/>
                                 </div>
 
                                 <div className='carousel-box'>
-                                    <TestemonialBox name="Said Solsaev"/>
-                                    <TestemonialBox name="Said Solsaev"/>
+                                    <TestemonialBox name="Lars Olsen"/>
+                                    <TestemonialBox name="Lars Olsen"/>
                                 </div>
                             </Carousel>
                         </div>
@@ -81,8 +81,9 @@ const Styles = styled.div`
         }
 
         .all-testimonials{
-            display: flex;
+            // display: flex;
             gap: 3rem;
+            
         }
 
         .testimonial-content__dots{
@@ -105,12 +106,7 @@ const Styles = styled.div`
         }
     }
 
-    .carousel carousel-slider{
-        margin: 20px;
-        .control-dots{
-            margin-top: 20px;
-        }
-    }
+    
 
     .carousel-box{
         display: flex;
