@@ -43,7 +43,6 @@ const Styles = styled.div`
         box-shadow: 0 20px 40px 0 rgb(0 0 0 / 8%);
         padding: 2rem;
         position: relative;
-        // width: 500px;
     
         @media (max-width: 1000px) {
             padding: 5rem 3rem;

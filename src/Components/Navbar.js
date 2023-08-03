@@ -14,9 +14,9 @@ export default function Navbar() {
                     <div className='navbar-items'>
                         <ul className='items-menu'>
                             <li><a href='/'>Hjem</a></li>
-                            <li><a href='/'>Våre biler</a></li>
-                            <li><a href='/'>Kontakt</a></li>
-                            <li><a href='/'>Om Oss</a></li>
+                            <li><a href='/våre-biler'>Våre biler</a></li>
+                            <li><a href='/kontakt'>Kontakt</a></li>
+                            <li><a href='/om-oss'>Om Oss</a></li>
                         </ul>
                     </div>
 
