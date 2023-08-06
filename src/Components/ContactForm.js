@@ -31,7 +31,6 @@ export default function ContactForm() {
                     </div>
                 </div>
             </form>
-
         </Styles>
     )
 }
@@ -43,8 +42,8 @@ const Styles = styled.div`
         align-items: center;
         justify-content: center;
         padding: 2rem;
-        border: 2px solid black;
-        width: 50%;
+        // border: 2px solid black;
+        width: 100%;
         background: #d3d3d3d3;
 
         &__inp{
@@ -52,6 +51,27 @@ const Styles = styled.div`
             flex-direction: column;
             margin-bottom: 20px;
             width: 100%;
+        }
+
+        &__btn{
+            padding-top: 2rem;
+            button{
+                padding: 1rem;
+                border-radius: 1em;
+                width: 200px;
+                background: white;
+                border:none;
+                text-transform: uppercase;
+                font-size: 32px;
+                font-weight: 700;
+                color: black;
+
+                &:hover{
+                    background: green;
+                    border: none;
+                    color: white;
+                }
+            }
         }
 
 
