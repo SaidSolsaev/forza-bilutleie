@@ -1,29 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 export default function ContactForm() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [msg, setMsg] = useState("");
+
+    const handleName = (e) => {
+        setName(e.target.value);
+    }
+
+    const handleEmail = (e) => {
+        setEmail(e.target.value);
+    }
+
+    const handlePhone = (e) => {
+        setPhone(e.target.value);
+    }
+
+    const handleMsg = (e) => {
+        setMsg(e.target.value);
+    }
+
     return (
         <Styles>
             <form className='form'>
                 <div className='input-container'>
                     <div className='input-container__inp'>
                         <label>Fult navn</label>
-                        <input placeholder='Navn...' type='name'/>
+                        <input required placeholder='Navn...' type='name' onChange={handleName}/>
                     </div>
 
                     <div className='input-container__inp'>
                         <label>Epost</label>
-                        <input placeholder='Epost...' type='email'/>
+                        <input required placeholder='Epost...' type='email' onChange={handleEmail}/>
                     </div>
 
                     <div className='input-container__inp'>
                         <label>Telefon</label>
-                        <input placeholder='Telefon...'  type='number'/>
+                        <input required placeholder='Telefon...'  type='number' onChange={handlePhone}/>
                     </div>
 
                     <div className='input-container__inp'>
                         <label>Melding</label>
-                        <textarea rows="4" cols="50" placeholder='Skriv til oss...'/>
+                        <textarea required rows="4" cols="50" placeholder='Skriv til oss...' onChange={handleMsg}/>
                     </div>
                     
                     <div className='input-container__btn'>
@@ -42,7 +63,6 @@ const Styles = styled.div`
         align-items: center;
         justify-content: center;
         padding: 2rem;
-        // border: 2px solid black;
         width: 100%;
         background: #d3d3d3d3;
 
@@ -83,7 +103,6 @@ const Styles = styled.div`
 
         input{
             padding: 10px;
-            // border-radius: 10px;
             border: none;
             border-bottom: 1px solid black;
             outline: none;
@@ -93,9 +112,6 @@ const Styles = styled.div`
 
         textarea{
             padding: 10px;
-            // border: none;
-            // border-top: 1px solid black;
-            // border-bottom: 1px solid black;
             outline: none;
             font-size: 22px;
             background: none;

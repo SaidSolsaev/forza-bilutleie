@@ -1,14 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import TestemonialBox from './TestemonialBox';
-import CircleIcon from '@mui/icons-material/Circle';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
 export default function Testimonials() {
-    const [active, setActive] = useState(0);
-
-    console.log(active);
 
     return (
         <Styles>
@@ -43,8 +39,8 @@ export default function Testimonials() {
                 </div>
             </section>
         </Styles>
-    )
-}
+    );
+};
 
 const Styles = styled.div`
     .testimonial-section{

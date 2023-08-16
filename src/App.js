@@ -4,7 +4,7 @@ import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
 import CarPage from "./Pages/CarsPage";
 import Contact from "./Pages/Contact";
-
+import AboutUs from "./Pages/AboutUs"
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/våre-biler" element={<CarPage />} />
           <Route path="/kontakt" element={<Contact />} />
+          <Route path="/om-oss" element={<AboutUs />} />
         </Routes>
       </Router>
 
